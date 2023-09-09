@@ -1,5 +1,5 @@
 import argparse
-import generate
+from littlelink.generate import run
 
 
 def main():
@@ -21,7 +21,7 @@ def main():
     )
 
     options = parser.parse_args()
-    generate.main(vars(options))
+    run(vars(options))
 
 
 if __name__ == '__main__':

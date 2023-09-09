@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "littlelink"
-version = "0.1.0"
-description = "littlelink generator"
+version = "0.1.1"
+description = "Littlelink Generator"
 authors = ["Sumanth <sumanthreddystar@gmail.com>"]
 maintainers  = ["Sumanth <sumanthreddystar@gmail.com>"]
 readme = "README.md"
 
-homepage = "https://pypi.org/project/littlelink/"
+homepage = "https://pypi.org/project/littlelink"
 repository = "https://github.com/insumanth/littlelink"
 documentation = "https://insumanth.github.io/littlelink"
 
@@ -28,4 +28,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-blankimage = 'littlelink.cli:main'
+littlelink = 'littlelink.cli:main'

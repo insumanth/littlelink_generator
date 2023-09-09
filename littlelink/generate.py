@@ -1,5 +1,7 @@
 import json
 import webbrowser
+from pathlib import Path
+import os
 
 
 def json_data(file_name):
@@ -111,12 +113,16 @@ def save_html(file_name, head, body):
         return fp.write(html)
 
 
-def main(option):
-    assets = json_data("assets.json")
+def run(option):
+    root_dir = Path(__file__).parent
+    assets_file = str(root_dir.joinpath("assets.json"))
+    input_config_file = "link_config.json"
+    index_html = "index.html"
+
+    assets = json_data(assets_file)
     css, icons, config_template, icon_map = assets["css"], assets["icons"], assets["config"], assets["icon_map"]
 
-    input_config_file = "./link_config.json"
-    index_html = "index.html"
+
 
     if option["create_config"]:
         create_config_file(config_template, input_config_file)
@@ -132,7 +138,7 @@ def main(option):
 
 
 if __name__ == '__main__':
-    main({'create_config': False, 'generate': False})
+    run({'create_config': False, 'generate': False})
 
 
 
